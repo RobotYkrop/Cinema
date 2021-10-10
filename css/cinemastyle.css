@@ -16,6 +16,7 @@ list-style: none;
 .nav-main {
     color: white;
     text-decoration: none;
+    display: flex;
 }
 .hello {
     color: white;
