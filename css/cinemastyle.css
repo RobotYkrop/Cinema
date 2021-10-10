@@ -1,0 +1,23 @@
+body {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+background-color: #621402;
+}
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+li {
+list-style: none;
+}
+.nav-main {
+    color: white;
+    text-decoration: none;
+}
+.hello {
+    color: white;
+    line-height: 19px;
+}
