@@ -1,12 +1,17 @@
+* {
+    box-sizing: border-box;
+}
 body {
 margin: 0;
 font-family: 'Roboto';
 background-color: #621402;
+color: white;
 }
 .container {
     max-width: 1170px;
     margin: auto;
 }
+/* Навигационное меню */
 .page-header {
     min-height: 100vh;
     background:linear-gradient(180deg, rgba(98, 20, 2, 0.31) 0%, #621402 85.62%), url('/img/bg.svg') no-repeat center top / cover;
@@ -15,7 +20,7 @@ background-color: #621402;
     display: flex;
     align-items: center;
     padding-top: 30px;
-    padding-bottom: 90px;
+    padding-bottom: 30px;
     list-style: none;
 }
 .menu {
@@ -25,6 +30,7 @@ background-color: #621402;
 }
 .menu li {
     margin-right: 25px;
+    list-style: none;
 }
 .nav-main {
     color: white;
@@ -42,8 +48,11 @@ background-color: #621402;
     border-radius: 50px;
     margin-left: 11px;
 }
+/* Описание фильма и время с рейтингом */
 .film {
-    color: white;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
 }
 .film-title {
 font-size: 24px;
@@ -61,4 +70,113 @@ line-height: 42px;
 font-size: 16px;
 line-height: 150%;
 width: 570px;
+}
+.film-trailer {
+    margin: auto;
+}
+.film-time-rating {
+    display: flex;
+    align-items: center;
+    margin-top: 50px;
+}
+.rating {
+    margin-left: 34px;
+}
+.film-time-rating .rating span{
+    margin-left: 10px;
+}
+
+.film-time-rating .rating span strong{
+    font-size: 24px;
+}
+/* Оформление блоков дней */
+.session {
+    margin-top: 62px;
+    padding-top: 46px;
+    padding-bottom: 64px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.date-block {
+    display: flex;
+}
+.session-label {
+    display: block;
+    margin-bottom: 20px;
+}
+.date-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: background-color 0.3s;
+}
+}
+.date-month {
+    font-size: 16px;
+    line-height: 19px;
+}
+.date-day {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 35px;
+}
+.date-week {
+    font-size: 19px;
+    line-height: 22px;
+}
+/* Оформление кнопки */
+.content {
+    transition: max-height 0.2s;
+    overflow: hidden;
+  }
+  .content[aria-hidden="true"] {
+    max-height: 0;
+  }
+  .content[aria-hidden="false"] {
+    max-height: var(--containerHeight, 1000px);
+  }
+  .container {
+	font-family: sans-serif;
+	line-height: 1.2;
+}
+
+.trigger {
+	font-size: 1em;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	width: 90px;
+    height: 90px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+}
+.trigger:hover {
+    background: #FE8E05;
+    color: black;
+}
+.trigger:focus {
+		border: 2px solid #222;
+		outline: 0;
+}
+.trigger[data-drawer-showing="true"] & {
+		background-color: #3ecf8e;
+		border: 2px solid transparent;
+}
+
+.container + .container {
+	margin-top: 20px;
+}
+.content {
+	display: flex;
+	margin: 1em;
+	line-height: 1.4;
+	max-width: 800px;
 }
