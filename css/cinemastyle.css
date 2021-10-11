@@ -98,7 +98,6 @@ width: 570px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
 }
 .date-block {
     display: flex;
@@ -107,16 +106,7 @@ width: 570px;
     display: block;
     margin-bottom: 20px;
 }
-.date-item {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-    transition: background-color 0.3s;
-}
-}
+
 .date-month {
     font-size: 16px;
     line-height: 19px;
@@ -145,10 +135,8 @@ width: 570px;
 	font-family: sans-serif;
 	line-height: 1.2;
 }
-
 .trigger {
 	display: flex;
-	padding: 0 20px;
 	width: 90px;
     height: 90px;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -159,8 +147,8 @@ width: 570px;
     text-align: center;
     align-items: center;
     justify-content: center;
-    margin-right: 15px;
     transition: background-color 0.3s;
+    
 }
 .trigger:hover {
     background: #FE8E05;
@@ -169,18 +157,37 @@ width: 570px;
 .trigger:active {
 		border: 1px solid #222;
 }
-.container + .container {
-	margin-top: 20px;
-}
 .content {
     display: flex;
-    border-radius: 20px;
-    margin-top: 50px;
 	line-height: 1.4;
-	width: 200px;
 }
 .content p {
-    outline: 1px solid white;
-    border-radius: 20px;
-    
+    outline: 1px solid rgba(255, 255, 255, 0.397);
+    width: 100px;
+    height: 90px;
+}
+/* Оформление select */
+.select {
+    font-size: 16px;
+    line-height: 150%;
+    color: white;
+    background-color: rgba(10, 10, 10, 0.267);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    padding: 18px;
+    margin-top: 15px;
+}
+.select option {
+    background: rgba(255, 255, 255, 0.15);
+}
+.scheme {
+background: rgba(36, 36, 36, 0.18);
+border-radius: 10px;
+}
+.scheme path:not(.light) {
+    fill: rgba(255, 255, 255, 0.15);
+}
+.scheme path:not(.light):hover {
+    fill: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
 }
