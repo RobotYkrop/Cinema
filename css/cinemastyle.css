@@ -7,7 +7,7 @@ font-family: 'Roboto';
 background-color: #621402;
 color: white;
 }
-.container {
+.container-content {
     max-width: 1170px;
     margin: auto;
 }
@@ -147,9 +147,7 @@ width: 570px;
 }
 
 .trigger {
-	font-size: 1em;
 	display: flex;
-	align-items: center;
 	padding: 0 20px;
 	width: 90px;
     height: 90px;
@@ -157,26 +155,32 @@ width: 570px;
     border-radius: 5px;
     background-color: transparent;
     color: white;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    transition: background-color 0.3s;
 }
 .trigger:hover {
     background: #FE8E05;
     color: black;
 }
-.trigger:focus {
-		border: 2px solid #222;
-		outline: 0;
+.trigger:active {
+		border: 1px solid #222;
 }
-.trigger[data-drawer-showing="true"] & {
-		background-color: #3ecf8e;
-		border: 2px solid transparent;
-}
-
 .container + .container {
 	margin-top: 20px;
 }
 .content {
-	display: flex;
-	margin: 1em;
+    display: flex;
+    border-radius: 20px;
+    margin-top: 50px;
 	line-height: 1.4;
-	max-width: 800px;
+	width: 200px;
+}
+.content p {
+    outline: 1px solid white;
+    border-radius: 20px;
+    
 }

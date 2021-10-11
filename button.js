@@ -1,18 +1,40 @@
+var containers;
+function initDrawers() {
+	// Get the containing elements
+	containers = document.querySelectorAll(".container");
+	setHeights();
+	wireUpTriggers();
+	window.addEventListener("resize", setHeights);
+}
 
-    function zero_first_format(value)
-    {
-        if (value < 10)
-        {
-            value='0'+value;
-        }
-        return value;
-    }
-    function date_time()
-    {
-        var current_datetime = new Date();
-        var day = zero_first_format(current_datetime.getDate());
-        var month = zero_first_format(current_datetime.getMonth()+1);
+window.addEventListener("load", initDrawers);
 
-        return day+"."+month;
-    }
-    document.getElementById('date_time_block').innerHTML = date_time();
+function setHeights() {
+	containers.forEach(container => {
+		let content = container.querySelector(".content");
+		content.removeAttribute("aria-hidden");
+		let heightOfContent = content.getBoundingClientRect().height;
+		container.style.setProperty("--containerHeight", `${heightOfContent}px`);
+		setTimeout(e => {
+			container.classList.add("height-is-set");
+			content.setAttribute("aria-hidden", "true");
+		}, 0);
+	});
+}
+
+function wireUpTriggers() {
+	containers.forEach(container => {
+		let btn = container.querySelector(".trigger");
+		let content = container.querySelector(".content");
+		btn.addEventListener("click", () => {
+			container.setAttribute(
+				"data-drawer-showing",
+				container.getAttribute("data-drawer-showing") === "true" ? "false" : "true"
+			);
+			content.setAttribute(
+				"aria-hidden",
+				content.getAttribute("aria-hidden") === "true" ? "false" : "true"
+			);
+		});
+	});
+}
